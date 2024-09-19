@@ -9,7 +9,7 @@ export class Equacao2Grau {
     }
 
     private calcularBascara(delta: number) {
-        return (-this.b + delta) / 2 * this.a
+        return (-this.b + delta) / (2 * this.a)
     }
 
     public calcular() {

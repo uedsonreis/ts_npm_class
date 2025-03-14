@@ -1,22 +1,17 @@
-export class Equacao2Grau {
 
-    constructor(private a: number, private b: number, private c: number) {}
+function calcularDelta(a: number, b: number, c: number) {
+    const b2 = Math.pow(b, 2)
+    const ac4 = 4 * a * c
+    return Math.sqrt(b2 - ac4)
+}
 
-    private calcularDelta() {
-        const b2 = Math.pow(this.b, 2)
-        const ac4 = 4 * this.a * this.c
-        return Math.sqrt(b2 - ac4)
-    }
+function calcularBascara(delta: number, a: number, b: number) {
+    return (-b + delta) / (2 * a)
+}
 
-    private calcularBascara(delta: number) {
-        return (-this.b + delta) / (2 * this.a)
-    }
-
-    public calcular() {
-        const delta = this.calcularDelta()
-        const raiz1 = this.calcularBascara(delta)
-        const raiz2 = this.calcularBascara(-delta)
-        return [raiz1, raiz2]
-    }
-
+export function calcularEquacao2grau(a: number, b: number, c: number) {
+    const delta = calcularDelta(a, b, c)
+    const raiz1 = calcularBascara(delta, a, b)
+    const raiz2 = calcularBascara(-delta, a, b)
+    return [raiz1, raiz2]
 }

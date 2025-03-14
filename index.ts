@@ -2,7 +2,7 @@ import { stdin, stdout } from 'process'
 import { createInterface, Interface } from 'readline/promises'
 
 import { Carro } from './src/carro'
-import { Equacao2Grau } from './src/equacao'
+import { calcularEquacao2grau } from './src/equacao'
 
 async function atividade1(readinput: Interface) {
     
@@ -30,9 +30,7 @@ async function atividade2(readinput: Interface) {
     const b = Number(textB)
     const c = Number(textC)
 
-    const equacao = new Equacao2Grau(a, b, c)
-
-    console.log(`As raízes da equação são [${equacao.calcular()}].`)
+    console.log(`As raízes da equação são [${calcularEquacao2grau(a, b, c)}].`)
 }
 
 async function main() {
